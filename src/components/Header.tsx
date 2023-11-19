@@ -27,13 +27,14 @@ const Header = () => {
       {/* search */}
       <div className='flex flex-1 h-10 relative'>
        <input className='w-full h-full rounded-md outline-none text-black border-[5px] border-transparent focus:border-yellow-500 ' type="text" placeholder='search items'/>   
-      <span className='text-black text-2xl bg-amazon_yellow hover:bg-yellow-500 w-12 h-10 flex items-center justify-center absolute right-0 rounded-r-md cursor-pointer' >
+      <span className='text-black text-2xl bg-amazon_yellow hover:bg-yellow-500 w-12 h-10 
+      flex items-center justify-center absolute right-0 rounded-r-md cursor-pointer' >
       <HiOutlineSearch/>
       </span>   
       </div>
      
       {/* sign in */}
-      <div className='h-[70%] border border-transparent hover:border-white mx-2 p-2 cursor-pointer'>
+      <div className='h-[70%] border border-transparent hover:border-white mx-2 p-2 cursor-pointer hidden md:inline-block'>
         <p>Hello, Sign In</p>
         <p className='text-white font-bold'>Account & List</p>
       </div>
