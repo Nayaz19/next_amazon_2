@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { HiShoppingCart } from "react-icons/hi";
 import { IoIosHeart } from "react-icons/io";
 import FormatedPrice from './FormatedPrice';
+import {useDispatch } from 'react-redux'
+import { addToCard } from '@/store/nextSlice';
 
 interface items {
   brand:string,
@@ -21,6 +23,9 @@ interface ProductProps{
 }
 
 const Product = ({item}:any) => {
+
+  const dispatch = useDispatch()
+
   return (
     <div className='w-full bg-white text-black rounded-lg p-4 group overflow-hidden relative'>
 
@@ -48,7 +53,21 @@ const Product = ({item}:any) => {
      
      </div>
      
-     <button className=' w-full bg-amazon_yellow hover:bg-yellow-500 h-10 rounded-lg'> Add To Cart</button>
+     <button onClick={() => dispatch(addToCard({
+                        _id:item._id,
+                        brand:item.brand,
+                        category:item.category,
+                        description:item.description,
+                        image:item.image,
+                        isNew:item.isNew,
+                        oldPrice:item.oldPrice, 
+                        price:item.price,
+                        title:item.title,
+                        quantity:1,
+
+
+     }))}
+      className=' w-full bg-amazon_yellow hover:bg-yellow-500 h-10 rounded-lg'> Add To Cart</button>
       
      </div>
      
